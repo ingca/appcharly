@@ -1,0 +1,11 @@
+<DockLayout stretchLastChild="false">
+    <label dock="top" text="Titulo" class="h1 text-center"></label>
+
+<StackLayout dock="top" class="nt-form">
+    <TextField  [isEnabled]="!loading" keyboardType="email" autocapitalizationType="none" [(ngModel)]="Email" class="nt-imput" hint="Email"></TextField>
+    <TextField  [isEnabled]="!loading" secure="true"[(ngModel)]="Password" class="nt-imput" hint="Password"></TextField>
+</StackLayout>
+
+<Button [isEnabled]="!loading" (tap)="login()" dock="bottom" text="login" class="btn btn-primary -active"></Button>
+
+</DockLayout>
