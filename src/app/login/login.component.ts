@@ -27,6 +27,8 @@ export class LoginComponent implements OnInit
 
   login()
   {
+    console.log(this.email);
+    console.log(this.password);
     this.showLoader();
     this.authService.login(this.email, this.password).then((token:string)=>
     {

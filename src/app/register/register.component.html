@@ -1,0 +1,13 @@
+<ScrollView>
+    <DockLayout stretchLastChild="false">
+        <Label dock="top" text="Favor de llenar tu registro" class="h1 text-center" ></Label>
+        <StackLayout dock="top" class="nt-form">
+            <TextField autocapitalizationType="words" hint="Nombre" [(ngModel)]="first_name" class="input"></TextField>
+            <TextField autocapitalizationType="words" hint="Apellido" [(ngModel)]="last_name" class="input"></TextField>
+            <TextField keyboardType="email" autocapitalizationType="none" hint="Email" [(ngModel)]="email" class="input"></TextField>
+            <TextField secure="true" hint="Contraseña" [(ngModel)]="password" class="input"></TextField>
+            <TextField secure="true" hint="Confirmacion de Contraseña" [(ngModel)]="password_confirmation" class="input"></TextField>
+        </StackLayout>
+        <Button (tap)="register()" dock="bottom" text="Registro" class="btn btn-primary"></Button>
+    </DockLayout>
+</ScrollView>>
