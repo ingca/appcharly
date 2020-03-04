@@ -6,6 +6,10 @@
     <TextField  secure="true"[(ngModel)]="password" class="nt-imput" hint="Password"></TextField>
 </StackLayout>
 
-<Button (tap)="login()" dock="bottom" text="login" class="btn btn-primary -active"></Button>
+<StackLayout dock="bottom">
+
+<Button (tap)="login()" text="login" class="btn btn-primary -active"></Button>
+<Button (tap)="goto_register()" text="Registrar" class="btn btn-primary -active"></Button>
+</StackLayout>
 
 </DockLayout>

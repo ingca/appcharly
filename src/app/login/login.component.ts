@@ -44,16 +44,21 @@ export class LoginComponent implements OnInit
     })
   }
 
+  goto_register()
+  {
+    this.router.navigate(["/register"],{ clearHistory:true});
+  }
+
   showLoader()
   {
     this.loading = true;
     const options: OptionsCommon = {
-      message: 'Loading...',
-      details: 'Additional detail note!',
+      message: 'Cargando...',
+      details: 'espera un momento',
       margin: 10,
       dimBackground: true,
-      color: '#4B9ED6', 
-      backgroundColor: 'yellow',
+      color: '#f4f4f4', 
+      backgroundColor: 'gray',
       userInteractionEnabled: false, 
       hideBezel: true, 
       mode: Mode.Indeterminate,

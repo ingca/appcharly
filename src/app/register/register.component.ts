@@ -3,6 +3,7 @@ import { Page } from "tns-core-modules/ui";
 import { LoadingIndicator, Mode, OptionsCommon } from '@nstudio/nativescript-loading-indicator';
 import { CFAlertDialog,DialogOptions,CFAlertGravity,CFAlertActionAlignment,CFAlertActionStyle,CFAlertStyle } from 'nativescript-cfalert-dialog';
 import { AuthService } from '../services/auth.service';
+import { RouterExtensions } from "nativescript-angular/router";
 
 @Component({
   selector: 'ns-register',
@@ -22,11 +23,16 @@ export class RegisterComponent implements OnInit {
 
   niceAlert = new CFAlertDialog();
 
-  constructor(private page: Page, private authService: AuthService) { }
+  constructor(private page: Page, private authService: AuthService, private router: RouterExtensions) { }
 
   ngOnInit() {
     this.page.actionBarHidden = true;
 
+  }
+
+  goto_login()
+  {
+    this.router.navigate(["/login"],{ clearHistory:true});
   }
 
   register(){
