@@ -1,0 +1,48 @@
+<ActionBar title='Account'>
+    <NavigationButton (tap)="onDrawerButtonTap()" icon="res://menu" ios:visibility="collapsed"></NavigationButton>
+    <ActionItem (tap)="onDrawerButtonTap()" android:visibility="collapsed" icon="res://menu" ios.position="left">
+    </ActionItem>
+    </ActionBar>
+    
+
+<ScrollView>
+
+    <StackLayout>
+
+        <GridLayout marginTop="50" columns="*, *, *,">
+
+            <label class="icon icon-border fas" col="0" text="&#xf013;"></label>
+            <label class="icon icon-border user-icon fas" col="1" text="&#xf007;"></label>
+            <label class="icon icon-border fas" col="2" text="&#xf303;"></label>
+
+        </GridLayout>
+
+<label [text]="authService.user.firstName + ' ' + authService.user.lastName" class="h2 text-center bold" ></label>
+<label text="Guadalajara, Jalisco" class="body text-center"></label>
+
+<StackLayout class="info-container">
+
+    <label class="icon margin-icon fas" text="&#xf095;"></label>
+    <GridLayout rows="auto, auto">
+
+        <label row="0" class="h3" text="3325113370"></label>
+        <label row="1" class="body" text="Mobile"></label>
+
+    </GridLayout>
+</StackLayout>
+<StackLayout class="info-container">
+
+    <label class="icon margin-icon fas" text="&#xf0e0;"></label>
+    <GridLayout rows="auto, auto">
+
+        <label row="0" class="h3" [text]="authService.user.email"></label>
+        <label row="1" class="body" text="Email"></label>
+
+    </GridLayout>
+
+
+</StackLayout>
+
+    </StackLayout>
+
+</ScrollView>
