@@ -12,6 +12,7 @@ user = new User();
 bizURL = "http://auth.bizbox.mx/api/";
 loginURL = "auth/login";
 registerURL = "auth/register";
+forgotURL = "auth/recover-password";
 
   constructor() 
   { 
@@ -77,6 +78,36 @@ registerURL = "auth/register";
           this.user.id = result.user.id;
           this.user.token = result.access_token;
           resolve(result.access_token);
+        }
+        else
+        {
+          reject(result.error);
+        }
+
+      }).catch((error)=>
+      {
+        //console.log(error);
+        reject();
+      })
+    });
+  }
+  forgot(email:string): Promise<string>
+  {
+    return new Promise<string>((resolve, reject) =>
+    {
+      request({
+        url: this.bizURL + this.forgotURL,
+        headers: {"Content-Type": "application/json"},
+        method: "POST",
+        content: JSON.stringify({
+          email
+        })
+      }).then((response)=>
+      {
+        const result = response.content.toJSON();
+        if (result.msg)
+        {
+          resolve(result.msg);
         }
         else
         {
