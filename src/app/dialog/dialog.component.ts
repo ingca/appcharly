@@ -102,7 +102,7 @@ export class DialogComponent implements OnInit {
         capitalizationType: capitalizationType.none
       };
 
-      prompt(options).then((result: PromptResult)=>
+      prompt(options).then((result)=>
       {
         if(result.result)
         {
